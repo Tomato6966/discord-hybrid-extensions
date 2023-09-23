@@ -47,6 +47,8 @@ client.cluster = new ClusterClient(client); // initialize the Client, so we acce
 
 // assign the clusterExtensions somewhere somehow, and provide the ClusterClient to it.
 client.clusterExtensions = new ExtensionsClient(client.cluster);
+// ! IMPORTANT : Bind the raw event to the clusterExtensions CLIENT
+client.on("raw", data => client.clusterExtensions.bindRawEvent(data));
 
 client.login('YOUR_TOKEN');
 ```

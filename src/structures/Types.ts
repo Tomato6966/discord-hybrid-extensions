@@ -9,3 +9,14 @@ export interface getInfoType {
     CLUSTER: number;
     CLUSTER_MANAGER_MODE: 'process' | 'worker';
 }; 
+
+export interface ExtensionsManagerOptions {
+    cache?: {
+        saveGuilds?: "complete" | "slim" | "slimmest" | "no";
+        saveGuildIds?: boolean;
+        saveGuildCount?: boolean;
+        saveUsers?: "complete" | "slim" | "slimmest" | "no";
+        saveUserIds?: boolean;
+        saveUserCount?: boolean;
+    }
+}
