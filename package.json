@@ -1,0 +1,57 @@
+{
+    "name": "discord-hybrid-extensions",
+    "version": "0.0.1",
+    "description": "Several Extensions for discord-hybrid-sharding.",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.js",
+    "scripts": {
+      "build": "npm run build:cjs && npm run build:esm && npm run build:types",
+      "build:cjs": "node tools/cleanup cjs && tsc -p config/tsconfig.cjs.json",
+      "build:esm": "node tools/cleanup esm && tsc -p config/tsconfig.esm.json",
+      "build:types": "node tools/cleanup types && tsc -p config/tsconfig.types.json",
+      "clean": "node tools/cleanup",
+      "lint": "eslint .",
+      "lint:fix": "eslint --fix 'src/**/*.{ts}'",
+      "format": "prettier --write src/**/*.ts --config ./.prettierrc.js",
+      "test": "node -v"
+    },
+    "publishConfig": {
+      "access": "public"
+    },
+    "files": [
+      "dist"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/tomato6966/discord-hybrid-extensions.git"
+    },
+    "keywords": [
+      "discord",
+      "sharding",
+      "hybrid",
+      "bot",
+      "typescript"
+    ],
+    "author": {
+      "name": "Tomato6966",
+      "url": "https://github.com/tomato6966/"
+    },
+    "contributers": [],
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/tomato6966/discord-hybrid-extensions/issues"
+    },
+    "homepage": "https://github.com/tomato6966/discord-hybrid-extensions/README.md",
+    "devDependencies": {
+      "@types/node": "^20.4.8",
+      "@typescript-eslint/eslint-plugin": "^6.4.0",
+      "@typescript-eslint/parser": "^6.4.0",
+      "eslint": "^8.47.0",
+      "discord-hybrid-sharding": "^2.1.3",
+      "ts-loader": "^9.4.4",
+      "tslib": "^2.6.1",
+      "typescript": "^5.1.6"
+    },
+    "dependencies": { }
+  }
